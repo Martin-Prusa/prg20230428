@@ -15,6 +15,7 @@
                 <div class="border">
                     <small>#{rev.id}</small>
                     <p>#{rev.text}</p>
+                    <p>Rating: #{rev.rating}</p>
                     <h:form>
                         <h:commandButton action="#{reviewService.deleteReview(rev.id)}" value="X"/>
                     </h:form>

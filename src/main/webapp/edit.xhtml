@@ -15,6 +15,12 @@
                     <h:inputText id="text" value="#{editReviewBean.review.text}" />
                 </div>
                 <div>
+                    <div>
+                        <label>Like</label>
+                        <h:selectOneMenu value="#{editReviewBean.review.rating}">
+                            <f:selectItems value="#{editReviewBean.numbers}" />
+                        </h:selectOneMenu>
+                    </div>
                 </div>
                 <div>
                     <h:commandButton action="#{editReviewBean.edit()}" value="Edit">

@@ -9,6 +9,8 @@ import jakarta.inject.Inject;
 import jakarta.inject.Named;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Named
 @SessionScoped
@@ -21,6 +23,14 @@ public class EditReviewBean implements Serializable {
 
     public void edit() {
         this.reviewService.editReview(review);
+    }
+
+    public List<Integer> getNumbers() {
+        List<Integer> l = new ArrayList<>();
+        for (int i =1 ; i < 5; i++) {
+            l.add(i);
+        }
+        return l;
     }
 
     public Review getReview() {

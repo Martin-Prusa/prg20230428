@@ -11,6 +11,9 @@ public class Review {
     @Column
     private String text = "";
 
+    @Column
+    private int rating = 0;
+
     public int getId() {
         return id;
     }
@@ -27,6 +30,13 @@ public class Review {
         this.text = text;
     }
 
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int like) {
+        this.rating = like;
+    }
 
     @Override
     public String toString() {
