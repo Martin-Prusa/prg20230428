@@ -7,7 +7,23 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <ui:composition template="fragments/template.xhtml">
     <ui:define name="content">
-
+        <h1>Movie</h1>
+        <h2>Reviews</h2>
+        <h:link outcome="add.xhtml" value="Add" />
+        <div>
+            <ui:repeat value="#{reviewService.reviews}" var="rev">
+                <div class="border">
+                    <small>#{rev.id}</small>
+                    <p>#{rev.text}</p>
+                    <h:form>
+                        <h:commandButton action="#{reviewService.deleteReview(rev.id)}" value="X"/>
+                    </h:form>
+                    <h:link outcome="edit.xhtml" value="Edit">
+                        <f:param value="#{rev.id}" name="id" />
+                    </h:link>
+                </div>
+            </ui:repeat>
+        </div>
     </ui:define>
 </ui:composition>
 </html>
