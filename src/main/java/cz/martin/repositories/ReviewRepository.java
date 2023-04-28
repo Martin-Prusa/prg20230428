@@ -63,6 +63,7 @@ public class ReviewRepository {
         EntityTransaction et = em.getTransaction();
         et.begin();
         r.setText(review.getText());
+        r.setRating(review.getRating());
         em.persist(r);
         et.commit();
         em.close();
